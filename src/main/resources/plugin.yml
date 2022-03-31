@@ -1,0 +1,7 @@
+name: Pldb
+version: '${project.version}'
+main: jp.yude.pldb.Pldb
+api-version: 1.15
+prefix: PLDB
+authors: [ yude ]
+website: https://github.com/yude/pldb
