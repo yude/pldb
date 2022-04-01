@@ -21,6 +21,7 @@ public final class Pldb extends JavaPlugin {
 
         // Register events
         getServer().getPluginManager().registerEvents(new Event(), this);
+        this.getCommand("bio").setExecutor(new CommandBio());
     }
 
     @Override

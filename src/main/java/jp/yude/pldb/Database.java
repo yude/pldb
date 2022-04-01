@@ -29,8 +29,9 @@ public class Database {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        // Initialize table
-        String sql = "CREATE TABLE IF NOT EXISTS `players` (" +
+        // Initialize tables
+        //// Table: `players`
+        String sql_players = "CREATE TABLE IF NOT EXISTS `players` (" +
                 " `uuid` VARCHAR(50) COLLATE utf8mb4_unicode_ci," +
                 " `name` VARCHAR(50) COLLATE utf8mb4_unicode_ci," +
                 " `last_joined` BIGINT(50)," +
@@ -40,7 +41,19 @@ public class Database {
                 " UNIQUE (`uuid`)" +
                 ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;" ;
         try {
-            PreparedStatement stmt = connection.prepareStatement(sql);
+            PreparedStatement stmt = connection.prepareStatement(sql_players);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        // Table: `bio`
+        String sql_bio = "CREATE TABLE IF NOT EXISTS `bio` (" +
+                "  `uuid` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL UNIQUE," +
+                "  `bio` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL" +
+                ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;" ;
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql_bio);
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
