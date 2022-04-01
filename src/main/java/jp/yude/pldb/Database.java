@@ -33,8 +33,10 @@ public class Database {
         String sql = "CREATE TABLE IF NOT EXISTS `players` (" +
                 " `uuid` VARCHAR(50) COLLATE utf8mb4_unicode_ci," +
                 " `name` VARCHAR(50) COLLATE utf8mb4_unicode_ci," +
-                " `last_joined` BIGINT(50) COLLATE utf8mb4_unicode_ci," +
-                " `first_joined` BIGINT(50) COLLATE utf8mb4_unicode_ci," +
+                " `last_joined` BIGINT(50)," +
+                " `first_joined` BIGINT(50)," +
+                " `playtime` BIGINT(50)," +
+                " `op` BIT," +
                 " UNIQUE (`uuid`)" +
                 ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;" ;
         try {

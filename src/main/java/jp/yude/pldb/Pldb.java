@@ -18,6 +18,9 @@ public final class Pldb extends JavaPlugin {
 
         // Establish connection to the database server.
         database = new Database(this);
+
+        // Register events
+        getServer().getPluginManager().registerEvents(new Event(), this);
     }
 
     @Override
